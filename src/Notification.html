@@ -253,7 +253,7 @@ app.controller("myCtrl", function($scope) {
 
 
 <div ng-repeat="x in data">
-	<div class="alert-box error" ng-switch on="x.type">
+	<div class="alert-box error flex-center-vertically" ng-switch on="x.type">
 		<div ng-switch-when="message">
 			<span>{{x.created_at|formatDate}} </span><i class="fa fa-envelope-o" aria-hidden="true"></i> {{x.data.from_name}} messaged you in <a href="#">{{x.data.subject}}</a>
 		</div>

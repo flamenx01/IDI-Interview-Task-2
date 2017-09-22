@@ -5,12 +5,19 @@
     border:1px solid #ededed;
     font-family:Tahoma,Geneva,Arial,sans-serif;font-size:11px;
     padding:10px 10px 10px 36px;
-
+	align-text: center;
 }
 
 .alert-box span {
     font-weight:bold;
     text-transform:uppercase;
+}
+
+.flex-center-vertically {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  height: 100px;
 }
 
 .message {
@@ -26,3 +33,4 @@
 
 }
 
+a { color: inherit; } 
