@@ -254,17 +254,22 @@ app.controller("myCtrl", function($scope) {
 
 <div ng-repeat="x in data">
 	<div class="alert-box error flex-center-vertically" ng-switch on="x.type">
+
 		<div ng-switch-when="message">
-			<span>{{x.created_at|formatDate}} </span><i class="fa fa-envelope-o" aria-hidden="true"></i> {{x.data.from_name}} messaged you in <a href="#">{{x.data.subject}}</a>
+			<div class="heading-box">{{x.created_at|formatDate}} </div>
+			<div class="tail-box"><i class="fa fa-envelope-o" aria-hidden="true"></i> {{x.data.from_name}} messaged you in <a href="#">{{x.data.subject}}</a></div>
 		</div>
 		<div ng-switch-when="forum">
-			<span>{{x.created_at|formatDate}} </span><i class="fa fa-comment-o" aria-hidden="true"></i> {{x.data.from_name}} replied to you in <a href="#">{{x.data.subject}}</a>
+			<div class="heading-box">{{x.created_at|formatDate}} </div>
+			<div class="tail-box"><i class="fa fa-comment-o" aria-hidden="true"></i> {{x.data.from_name}} replied to you in <a href="#">{{x.data.subject}}</a></div>
 		</div>		
 		<div ng-switch-when="gallery">
-			<span>{{x.created_at|formatDate}} </span><i class="fa fa-picture-o" aria-hidden="true"></i> {{x.data.user_name}} uploaded new file to gallery <a href="#">{{x.data.gallery_title}}</a>
+			<div class="heading-box">{{x.created_at|formatDate}} </div>
+			<div class="tail-box"><i class="fa fa-picture-o" aria-hidden="true"></i> {{x.data.user_name}} uploaded new file to gallery <a href="#">{{x.data.gallery_title}}</a></div>
 		</div>
 		<div ng-switch-when="file">
-			<span>{{x.created_at|formatDate}} </span><i class="fa fa-upload" aria-hidden="true"></i> {{x.data.user_name}} uploaded new file <a href="#">{{x.data.file_name}}</a> to <a href="#">{{x.data.module_name}}</a>
+			<div class="heading-box">{{x.created_at|formatDate}} </div>
+			<div class="tail-box"><i class="fa fa-upload" aria-hidden="true"></i> {{x.data.user_name}} uploaded new file <a href="#">{{x.data.file_name}}</a> to <a href="#">{{x.data.module_name}}</a></div>
 		</div>		
 	</div>
 </div>
