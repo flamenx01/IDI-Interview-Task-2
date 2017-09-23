@@ -249,7 +249,7 @@ app.controller("myCtrl", function($scope) {
 
 
 
-<div ng-repeat="x in data"> 
+<div ng-repeat="x in data"> <!-- Loop over all the data in the JSON file-->
 	<div class="alert-box error flex-center-vertically" ng-switch on="x.type"><!--switch based on which notificition type-->
 
 		<div ng-switch-when="message">
