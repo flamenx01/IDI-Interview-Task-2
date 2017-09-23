@@ -1,7 +1,6 @@
 
 
 .alert-box {
-
     border:1px solid #ededed;
     font-family:OpenSans;font-size:16px;
     
@@ -26,12 +25,6 @@
 	vertical-align: middle;
 	padding: 10% 0;
 }
-
-.alert-box span {
-    font-weight:bold;
-    text-transform:uppercase;
-}
-
 .flex-center-vertically {
   display: flex;
   justify-content: center;

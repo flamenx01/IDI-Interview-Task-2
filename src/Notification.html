@@ -6,7 +6,7 @@
 	<link rel="stylesheet" type="text/css" href="styles/style.css">
 <body>
 
-<script>
+<script><!--json file added here since browsers block external json files for security reasons-->
 	var json = [
   {
     "id": 891,
@@ -197,9 +197,7 @@
 ];
 
 
-function timeSince(dateIn) {
-
-}
+function timeSince() {}<!--for some reason everytime I remove it the script stops working-->
 </script>
 
 
@@ -207,7 +205,7 @@ function timeSince(dateIn) {
 var app = angular.module("notificationsList", []);
 
 
-app.filter('formatDate', function () {
+app.filter('formatDate', function () {<!-- format time to days/hour/minutes etc since post-->
    return function (input) {
 	   var date = new Date(input);
 
@@ -242,7 +240,6 @@ app.filter('formatDate', function () {
  
 app.controller("myCtrl", function($scope) {
     $scope.data = angular.fromJson(json);
-	$scope.timeSince = timeSince;
 });
 
 
@@ -252,8 +249,8 @@ app.controller("myCtrl", function($scope) {
 
 
 
-<div ng-repeat="x in data">
-	<div class="alert-box error flex-center-vertically" ng-switch on="x.type">
+<div ng-repeat="x in data"> 
+	<div class="alert-box error flex-center-vertically" ng-switch on="x.type"><!--switch based on which notificition type-->
 
 		<div ng-switch-when="message">
 			<div class="heading-box">{{x.created_at|formatDate}} </div>
@@ -273,6 +270,5 @@ app.controller("myCtrl", function($scope) {
 		</div>		
 	</div>
 </div>
-
 </body>
 </html>
