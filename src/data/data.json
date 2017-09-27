@@ -1,14 +1,4 @@
-<!DOCTYPE html>
-<html>
-	<title>Notification</title>
-	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
-	<script src="moment.js" type="text/javascript"></script>
-	<link rel="stylesheet" href="styles/font-awesome/css/font-awesome.min.css">
-	<link rel="stylesheet" type="text/css" href="styles/style.css">
-<body>
-
-<script><!--json file added here since browsers block external json files for security reasons-->
-	var json = [
+[
   {
     "id": 891,
     "type": "message",
@@ -195,73 +185,4 @@
     },
     "created_at": "2017-08-15T08:48:52+00:00"
   }
-];
-
-
-function timeSince() {}<!--for some reason everytime I remove it the script stops working-->
-</script>
-
-
-<script>
-var app = angular.module("notificationsList", []);
-
-
-app.filter('formatDate', function () {<!-- format time to days/hour/minutes etc since post-->
-   return function (input) {
-	   var date = moment(new Date(input)).fromNow();
-	  return date;
-   }
-});
-
-
- 
-
-
-app.controller('myCtrl', function($scope, $http) {
-
- /* $http.get('data.json')
-       .success(function(res){
-          $scope.todos = res.data;
-		  $scope.data = angular.fromJson(res);  
-        });
-		$scope.data = angular.fromJson(json);*/
-		
-	
-	$http.get("data.json").then(function(res){$scope.posts = res.data;})
-	
-	
-
-    //$scope.posts = angular.fromJson(json);
-});
-
-
-
-</script>
-
-<div ng-app="notificationsList" ng-controller="myCtrl">
-
-
-
-<div ng-repeat="x in posts"> <!-- Loop over all the data in the JSON file-->
-	<div class="alert-box error flex-center-vertically" ng-switch on="x.type"><!--switch based on which notificition type-->
-
-		<div ng-switch-when="message">
-			<div class="heading-box">{{x.created_at|formatDate}} </div>
-			<div class="tail-box"><i class="fa fa-envelope-o" aria-hidden="true"></i> {{x.data.from_name}} messaged you in <a href="#">{{x.data.subject}}</a></div>
-		</div>
-		<div ng-switch-when="forum">
-			<div class="heading-box">{{x.created_at|formatDate}} </div>
-			<div class="tail-box"><i class="fa fa-comment-o" aria-hidden="true"></i> {{x.data.from_name}} replied to you in <a href="#">{{x.data.subject}}</a></div>
-		</div>		
-		<div ng-switch-when="gallery">
-			<div class="heading-box">{{x.created_at|formatDate}} </div>
-			<div class="tail-box"><i class="fa fa-picture-o" aria-hidden="true"></i> {{x.data.user_name}} uploaded new file to gallery <a href="#">{{x.data.gallery_title}}</a></div>
-		</div>
-		<div ng-switch-when="file">
-			<div class="heading-box">{{x.created_at|formatDate}} </div>
-			<div class="tail-box"><i class="fa fa-upload" aria-hidden="true"></i> {{x.data.user_name}} uploaded new file <a href="#">{{x.data.file_name}}</a> to <a href="#">{{x.data.module_name}}</a></div>
-		</div>		
-	</div>
-</div>
-</body>
-</html>
+]
