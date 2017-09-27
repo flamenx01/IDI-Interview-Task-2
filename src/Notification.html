@@ -219,19 +219,7 @@ app.filter('formatDate', function () {<!-- format time to days/hour/minutes etc 
 
 app.controller('myCtrl', function($scope, $http) {
 
- /* $http.get('data.json')
-       .success(function(res){
-          $scope.todos = res.data;
-		  $scope.data = angular.fromJson(res);  
-        });
-		$scope.data = angular.fromJson(json);*/
-		
-	
-	$http.get("data.json").then(function(res){$scope.posts = res.data;})
-	
-	
-
-    //$scope.posts = angular.fromJson(json);
+	$scope.posts = angular.fromJson(json);
 });
 
 
